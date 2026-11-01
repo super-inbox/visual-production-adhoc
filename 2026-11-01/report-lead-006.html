@@ -1,0 +1,131 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>lead-006 · 主图（e-commerce）与 A+ 页 · 任务报告</title><style>
+:root{--ink:#1c1917;--mut:#78716c;--line:#e7e5e4;--bg:#faf9f7;--card:#fff;
+--pass:#166534;--passbg:#ecfdf5;--dev:#92400e;--devbg:#fffbeb;--fail:#991b1b;--failbg:#fef2f2;--todo:#3730a3;--todobg:#eef2ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.8 "Segoe UI","Microsoft YaHei",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 40px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(250,249,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:24px;height:54px;padding-top:0;padding-bottom:0}
+.nav .brand{font-weight:700;font-size:14px;letter-spacing:.02em;white-space:nowrap}
+.nav .links{display:flex;gap:20px;font-size:13.5px;color:var(--mut);flex-wrap:wrap}
+.nav .links a{text-decoration:none;padding:2px 0;border-bottom:2px solid transparent}
+.nav .links a:hover{color:var(--ink);border-color:var(--ink)}
+.nav .home{margin-left:auto;font-size:13px;color:var(--mut);text-decoration:none;white-space:nowrap}
+.nav .home:hover{color:var(--ink)}
+.hero{padding:60px 0 34px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);font-weight:700}
+h1{font-size:36px;line-height:1.25;margin:12px 0 20px;font-weight:700;letter-spacing:-.01em}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px}
+.chip.sm{font-size:12px;font-weight:600;padding:2px 10px;border-radius:999px;display:inline-block}
+.chip.pass{background:var(--passbg);color:var(--pass)}.chip.dev{background:var(--devbg);color:var(--dev)}
+.chip.fail{background:var(--failbg);color:var(--fail)}.chip.todo{background:var(--todobg);color:var(--todo)}
+.facts{display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:24px;font-size:13.5px;color:var(--mut)}
+.facts b{color:var(--ink);font-weight:600}
+section{padding:46px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:none}
+.sh{display:flex;align-items:baseline;gap:14px;margin-bottom:24px}
+.sh .no{font-size:13px;font-weight:700;color:#a8a29e;letter-spacing:.06em}
+.sh h2{font-size:22px;margin:0;font-weight:700;letter-spacing:-.01em}
+.prose{max-width:880px}
+.prose p{margin:0 0 14px}
+.prose .bad{color:var(--fail);font-weight:600}.prose .warn{color:var(--dev);font-weight:600}.prose .ok{color:var(--pass);font-weight:600}
+h3.lab{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:700;margin:30px 0 14px}
+.gal{display:grid;gap:16px}
+.gal.g2{grid-template-columns:repeat(2,1fr)}.gal.g3{grid-template-columns:repeat(3,1fr)}.gal.g4{grid-template-columns:repeat(4,1fr)}
+.shot{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;text-decoration:none;display:block;transition:box-shadow .16s,transform .16s}
+.shot:hover{box-shadow:0 12px 32px rgba(28,25,23,.12);transform:translateY(-2px)}
+.shot .ph{aspect-ratio:3/4;background:#f1efec;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.shot .ph img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
+.shot .cap{display:block;padding:10px 14px;font-size:13px;color:#44403c;border-top:1px solid var(--line);line-height:1.55}
+.qa{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px;max-width:1020px}
+.qa .top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.qa .rule{font-weight:650;font-size:15px}
+.qa .basis{margin-left:auto;font-size:12px;color:var(--mut)}
+.qa .ev{font-size:13.5px;color:#57534e;margin-top:8px;line-height:1.75}
+.scorebox{display:grid;grid-template-columns:1fr 300px;gap:36px;max-width:1020px;align-items:start;margin-top:26px}
+.bars .row{display:grid;grid-template-columns:200px 1fr 40px;gap:12px;align-items:center;margin-bottom:11px;font-size:13.5px}
+.bars .track{display:block;background:#f0eeea;border-radius:999px;height:10px;overflow:hidden}
+.bars .fill{display:block;height:100%;border-radius:999px;background:#292524}
+.bars .val{font-weight:650;text-align:right;font-variant-numeric:tabular-nums}
+.big{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.big .k{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);font-weight:700}
+.big .v{font-size:36px;font-weight:700;margin-top:6px;line-height:1.1}
+.big .g{font-size:12.5px;color:var(--mut);margin-top:10px;line-height:1.6}
+.big+.big{margin-top:14px}
+details.dimwhy{margin-top:14px;font-size:13px;color:var(--mut)}
+details.dimwhy summary{cursor:pointer;font-weight:600}
+details.dimwhy div{margin-top:8px;line-height:1.8}
+.verdict{border-left:4px solid var(--pass);background:var(--card);border-radius:0 12px 12px 0;padding:24px 28px;max-width:980px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.verdict.dev{border-color:#d97706}.verdict.fail{border-color:var(--fail)}
+.verdict .vtitle{font-size:19px;font-weight:700;margin-bottom:12px}
+.verdict p{margin:0 0 12px;font-size:14.5px}
+.verdict p:last-child{margin-bottom:0}
+.devlist{margin:8px 0 0;padding-left:20px}
+.devlist li{margin-bottom:6px}
+footer{padding:38px 0 70px;color:var(--mut);font-size:12.5px;line-height:1.9}
+#lb{position:fixed;inset:0;background:rgba(15,12,10,.94);display:none;z-index:100;flex-direction:column;align-items:center;justify-content:center}
+#lb.on{display:flex}
+#lb img{max-width:92vw;max-height:84vh;box-shadow:0 24px 90px rgba(0,0,0,.55)}
+#lb-cap{color:#d6d3d1;font-size:13.5px;margin-top:16px;max-width:78vw;text-align:center;line-height:1.6}
+#lb-x{position:absolute;top:14px;right:28px;color:#a8a29e;font-size:30px;cursor:pointer}
+#lb-prev,#lb-next{position:absolute;top:50%;transform:translateY(-50%);color:#a8a29e;font-size:44px;cursor:pointer;user-select:none;padding:24px}
+#lb-prev{left:16px}#lb-next{right:16px}
+#lb-prev:hover,#lb-next:hover,#lb-x:hover{color:#fff}
+@media (max-width:900px){.gal.g3,.gal.g4{grid-template-columns:repeat(2,1fr)}.scorebox{grid-template-columns:1fr}.wrap{padding:0 20px}}
+</style></head><body>
+<nav class="nav"><div class="wrap"><span class="brand">试穿任务报告</span><span class="links"><a href="#p1">任务与需求</a><a href="#p2">做法</a><a href="#p3">输入与产出</a><a href="#p4">QA 质检</a><a href="#p5">合格判定</a></span><a class="home" href="index.html">&#8592; 八任务总览</a></div></nav>
+<header class="hero"><div class="wrap">
+<div class="eyebrow">Fashion Try-on Benchmark · Task Report</div>
+<h1>lead-006 · 主图（e-commerce）与 A+ 页</h1>
+<div class="chips"><span class="chip pass">主图 PASS（mainC 推荐）</span><span class="chip fail">A+ 页未交付</span><span class="chip todo">A/B/C 选片由用户定</span></div>
+<div class="facts"><span>案例目录 <b>projects/2026-09-23-lead-006-fashion-main-aplus</b></span><span>成品 <b>3</b> 张</span><span>验收特写 <b>3</b> 张</span><span>quality_score <b>0.79</b></span><span>报告 <b>2026-10-28 · v2 重制</b></span></div>
+</div></header>
+<div class="wrap">
+<section id="p1"><div class="sh"><span class="no">01</span><h2>任务是什么 · 客户需求 · 做到什么程度</h2></div><div class="prose"><p><b>任务</b>：A+ 工作簿 image37 模特穿蓝灰麻灰针织衫 + 藏青白花阔腿裤，出 e-commerce 主图（纯白底）与 A+ 页。README：当前范围=一张主图 + 一张 A+ 图（工作簿还描述了更广的四色六 view brief，以 record 区分）。</p>
+<p><b>做到的程度</b>：主图 A/B/C 三候选——<b>mainC（seed 20261065）对齐 references/pose-reference.png（左手插裤袋）</b>；mainA/B 姿势未绑 pose-reference（违规已补齐）；split V 领/百褶垂坠/hi-lo 下摆/白花阔腿裤逐区 3&#215; 特写核对。<span class="bad">A+ 页未制作（工作量：工作簿 308MB + 版式参考排布，为独立工序）。</span></p></div></section>
+<section id="p2"><div class="sh"><span class="no">02</span><h2>怎么做的</h2></div><div class="prose"><p>链路同上。预处理：image37 带场景复杂背景 → sdmatte-matting 抠人 → 贴纯白底（image37_white.png）；服装图=work/garment-composite.png。mainC 姿势条款按 pose-reference 逐要素翻译（左手插袋/肘外弯/右臂垂/微笑）。</p></div></section>
+<section id="p3"><div class="sh"><span class="no">03</span><h2>输入与产出可视化</h2></div>
+<h3 class="lab">输入 · 客户 brief 引用图</h3>
+<div class="gal g4"><a class="shot" href="assets/a039.png" data-cap="pose-reference.png（姿势：左手插裤袋）"><span class="ph"><img loading="lazy" src="assets/a039.png" alt=""></span><span class="cap">pose-reference.png（姿势：左手插裤袋）</span></a><a class="shot" href="assets/a040.png" data-cap="length-reference.png（长度）"><span class="ph"><img loading="lazy" src="assets/a040.png" alt=""></span><span class="cap">length-reference.png（长度）</span></a><a class="shot" href="assets/a041.png" data-cap="aplus-layout-reference.png（A+ 版式）"><span class="ph"><img loading="lazy" src="assets/a041.png" alt=""></span><span class="cap">aplus-layout-reference.png（A+ 版式）</span></a><a class="shot" href="assets/a042.jpg" data-cap="top-reference.jpg（上衣）"><span class="ph"><img loading="lazy" src="assets/a042.jpg" alt=""></span><span class="cap">top-reference.jpg（上衣）</span></a></div>
+<h3 class="lab">产出 · 成品图（点开看原图，左右方向键翻张）</h3>
+<div class="gal g3"><a class="shot" href="assets/a043.png" data-cap="<b>mainC = pose-reference（左手插裤袋）· PASS · 推荐候选</b>"><span class="ph"><img loading="lazy" src="assets/a043.png" alt=""></span><span class="cap"><b>mainC = pose-reference（左手插裤袋）· PASS · 推荐候选</b></span></a><a class="shot" href="assets/a044.png" data-cap="mainA · 保持 image37 原姿势（姿势违规·披露）"><span class="ph"><img loading="lazy" src="assets/a044.png" alt=""></span><span class="cap">mainA · 保持 image37 原姿势（姿势违规·披露）</span></a><a class="shot" href="assets/a045.png" data-cap="mainB · 自编持手机+草编包（姿势违规·披露）"><span class="ph"><img loading="lazy" src="assets/a045.png" alt=""></span><span class="cap">mainB · 自编持手机+草编包（姿势违规·披露）</span></a></div>
+<h3 class="lab">验收特写 · 关键区 2-3&#215; 放大</h3><div class="gal g4"><a class="shot" href="assets/a046.jpg" data-cap="mainC 领口 3&#215;（split V+百褶垂坠）"><span class="ph"><img loading="lazy" src="assets/a046.jpg" alt=""></span><span class="cap">mainC 领口 3&#215;（split V+百褶垂坠）</span></a><a class="shot" href="assets/a047.jpg" data-cap="mainC 插袋 3&#215;（姿势达成+hi-lo 下摆）"><span class="ph"><img loading="lazy" src="assets/a047.jpg" alt=""></span><span class="cap">mainC 插袋 3&#215;（姿势达成+hi-lo 下摆）</span></a><a class="shot" href="assets/a048.jpg" data-cap="mainC 裤印花 3&#215;（白花枝叶均匀）"><span class="ph"><img loading="lazy" src="assets/a048.jpg" alt=""></span><span class="cap">mainC 裤印花 3&#215;（白花枝叶均匀）</span></a></div>
+</section>
+<section id="p4"><div class="sh"><span class="no">04</span><h2>按本任务 QA 规则质检</h2></div>
+<div class="prose" style="margin-bottom:18px"><p style="font-size:13.5px;color:var(--mut)">任务级明文规则逐条核验 + 统一 rubric 八维度评分。及格线：hard gates 全过且 quality_score &#8805; 0.70。结论全部来自直接读图实测（find-defects-first + 关键区 2-3&#215; 特写），推断均已标注。</p></div>
+<div class="qa"><div class="top"><span class="rule">pose-reference owns 姿势</span><span class="chip sm pass">PASS（整改后）</span><span class="basis">10-28 mainC 验收</span></div><div class="ev">mainA/B 未绑姿势（审计认定违规）→ mainC 左手插裤袋姿势实测达成</div></div><div class="qa"><div class="top"><span class="rule">纯白底 e-commerce 主图</span><span class="chip sm pass">PASS</span><span class="basis">三张整图</span></div><div class="ev">mainA/B/C 全部纯白底单人</div></div><div class="qa"><div class="top"><span class="rule">服装：split V 领/胸前百褶/hi-lo/白花阔腿裤</span><span class="chip sm pass">PASS</span><span class="basis">mainC 3&#215; 特写</span></div><div class="ev">逐区 3&#215; 特写核对，与样衣拼图一致</div></div><div class="qa"><div class="top"><span class="rule">length-reference（衣长）</span><span class="chip sm dev">PASS-dev</span><span class="basis">mainC_pants 特写</span></div><div class="ev">裤长及踝对齐；上衣 hi-lo 与参考一致性未逐像素比对（披露）</div></div><div class="qa"><div class="top"><span class="rule">A+ 页（README 明文范围）</span><span class="chip sm fail">未执行</span><span class="basis">—</span></div><div class="ev">未制作</div></div><div class="qa"><div class="top"><span class="rule">身份/赤脚</span><span class="chip sm dev">PASS-dev</span><span class="basis">三张整图</span></div><div class="ev">image37 金发模特保真；赤脚与 A/B 一致（原模特赤脚）</div></div>
+<div class="scorebox"><div class="bars"><div class="row"><span>Brief adherence <span style="color:#a8a29e">·15%</span></span><span class="track"><span class="fill" style="width:80%"></span></span><span class="val">4</span></div><div class="row"><span>Visual quality <span style="color:#a8a29e">·20%</span></span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">5</span></div><div class="row"><span>Brand consistency <span style="color:#a8a29e">·15%</span></span><span class="track"><span class="fill" style="width:80%"></span></span><span class="val">4</span></div><div class="row"><span>Refinement ability <span style="color:#a8a29e">·15%</span></span><span class="track"><span class="fill" style="width:80%"></span></span><span class="val">4</span></div><div class="row"><span>Cross-asset consistency <span style="color:#a8a29e">·10%</span></span><span class="track"><span class="fill" style="width:80%"></span></span><span class="val">4</span></div><div class="row"><span>Production readiness <span style="color:#a8a29e">·10%</span></span><span class="track"><span class="fill" style="width:60%"></span></span><span class="val">3</span></div><div class="row"><span>Efficiency <span style="color:#a8a29e">·5%</span></span><span class="track"><span class="fill" style="width:80%"></span></span><span class="val">4</span></div><details class="dimwhy"><summary>各维度评分依据</summary><div><div><b>Brief adherence</b> — 主图姿势/白底/服装达标；A+ 页未交付</div><div><b>Visual quality</b> — mainC 构图/光影/细节全部特写级核对通过</div><div><b>Brand consistency</b> — pose/length 引用绑定（C 达成，A/B 披露）</div><div><b>Refinement ability</b> — 姿势违规经一轮补跑闭环</div><div><b>Cross-asset consistency</b> — A/B/C 同一服装同一身份</div><div><b>Production readiness</b> — meta 齐；A+ 缺席</div><div><b>Efficiency</b> — mainC 一次过</div></div></details></div><div><div class="big"><div class="k">quality_score</div><div class="v">0.79</div><div class="g">统一 rubric 八维度加权归一（design-agent-v0/eval/rubrics/unified-design-agent-rubric-v0.1.md，来自 agentic-adhoc 仓库）</div></div><div class="big"><div class="k">gated_score</div><div class="v" style="font-size:17px;line-height:1.5;margin-top:10px">工件契约 gate 未过（A+ 缺席）&#8594; 范围内判主图合格</div></div></div></div>
+</section>
+<section id="p5"><div class="sh"><span class="no">05</span><h2>合格判定</h2></div>
+<div class="verdict dev"><div class="vtitle">判定：主图合格（mainC 推荐）；A+ 页未交付，不宣布任务整体完成</div><p>mainA/B 保留作姿势候选披露；mainC 是唯一对齐 pose-reference 的候选。<b>A/B/C 选片由用户定</b>；A+ 页需要单独工序（工作簿解析+版式排布），是否启动待用户指令。length-reference 的衣长逐像素比对未做（比例对照法同 corpus 级无阈值）。</p></div>
+</section>
+<footer>数据来源：本目录 gen_reports_v2.py（判定/QA/评分原样取自 v1，未改动结论）· 各 case spec/meta.json（模型/prompt/seed/输入输出哈希）· 工作文档 2026-10-27_各图生成过程与代码清单_工作文档.md。<br>benchmark 红线：client-brief/ 字节不动 · 不虚构缺失数据 · 历史生成结果不作输入参考 · 参考对标图（不可直接用）从未喂给任何模型。</footer>
+</div>
+<div id="lb"><span id="lb-x">&times;</span><span id="lb-prev">&#8249;</span><span id="lb-next">&#8250;</span><img id="lb-img" alt=""><div id="lb-cap"></div></div>
+<script>
+(function(){
+var lb=document.getElementById('lb'),img=document.getElementById('lb-img'),cap=document.getElementById('lb-cap');
+var list=[],idx=0;
+function render(){var a=list[idx];if(!a)return;img.src=a.getAttribute('href');cap.innerHTML=a.getAttribute('data-cap')||'';lb.classList.add('on');}
+function openLb(a){list=[].slice.call(a.closest('.gal').querySelectorAll('a.shot'));idx=list.indexOf(a);render();}
+function step(d){if(!list.length)return;idx=(idx+d+list.length)%list.length;render();}
+document.addEventListener('click',function(e){
+  var t=e.target;
+  var a=t.closest?t.closest('a.shot'):null;
+  if(a){e.preventDefault();openLb(a);return;}
+  if(t.closest&&t.closest('#lb-next')){step(1);return;}
+  if(t.closest&&t.closest('#lb-prev')){step(-1);return;}
+  if(t.id==='lb-x'||t.id==='lb'){lb.classList.remove('on');}
+});
+document.addEventListener('keydown',function(e){
+  if(!lb.classList.contains('on'))return;
+  if(e.key==='Escape')lb.classList.remove('on');
+  else if(e.key==='ArrowRight')step(1);
+  else if(e.key==='ArrowLeft')step(-1);
+});
+})();
+</script>
+</body></html>

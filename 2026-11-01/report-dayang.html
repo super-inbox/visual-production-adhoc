@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>dayang · 棕格纹西装试稿（DOCX 明文验收） · 任务报告</title><style>
+:root{--ink:#1c1917;--mut:#78716c;--line:#e7e5e4;--bg:#faf9f7;--card:#fff;
+--pass:#166534;--passbg:#ecfdf5;--dev:#92400e;--devbg:#fffbeb;--fail:#991b1b;--failbg:#fef2f2;--todo:#3730a3;--todobg:#eef2ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.8 "Segoe UI","Microsoft YaHei",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 40px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(250,249,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:24px;height:54px;padding-top:0;padding-bottom:0}
+.nav .brand{font-weight:700;font-size:14px;letter-spacing:.02em;white-space:nowrap}
+.nav .links{display:flex;gap:20px;font-size:13.5px;color:var(--mut);flex-wrap:wrap}
+.nav .links a{text-decoration:none;padding:2px 0;border-bottom:2px solid transparent}
+.nav .links a:hover{color:var(--ink);border-color:var(--ink)}
+.nav .home{margin-left:auto;font-size:13px;color:var(--mut);text-decoration:none;white-space:nowrap}
+.nav .home:hover{color:var(--ink)}
+.hero{padding:60px 0 34px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);font-weight:700}
+h1{font-size:36px;line-height:1.25;margin:12px 0 20px;font-weight:700;letter-spacing:-.01em}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px}
+.chip.sm{font-size:12px;font-weight:600;padding:2px 10px;border-radius:999px;display:inline-block}
+.chip.pass{background:var(--passbg);color:var(--pass)}.chip.dev{background:var(--devbg);color:var(--dev)}
+.chip.fail{background:var(--failbg);color:var(--fail)}.chip.todo{background:var(--todobg);color:var(--todo)}
+.facts{display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:24px;font-size:13.5px;color:var(--mut)}
+.facts b{color:var(--ink);font-weight:600}
+section{padding:46px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:none}
+.sh{display:flex;align-items:baseline;gap:14px;margin-bottom:24px}
+.sh .no{font-size:13px;font-weight:700;color:#a8a29e;letter-spacing:.06em}
+.sh h2{font-size:22px;margin:0;font-weight:700;letter-spacing:-.01em}
+.prose{max-width:880px}
+.prose p{margin:0 0 14px}
+.prose .bad{color:var(--fail);font-weight:600}.prose .warn{color:var(--dev);font-weight:600}.prose .ok{color:var(--pass);font-weight:600}
+h3.lab{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:700;margin:30px 0 14px}
+.gal{display:grid;gap:16px}
+.gal.g2{grid-template-columns:repeat(2,1fr)}.gal.g3{grid-template-columns:repeat(3,1fr)}.gal.g4{grid-template-columns:repeat(4,1fr)}
+.shot{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;text-decoration:none;display:block;transition:box-shadow .16s,transform .16s}
+.shot:hover{box-shadow:0 12px 32px rgba(28,25,23,.12);transform:translateY(-2px)}
+.shot .ph{aspect-ratio:3/4;background:#f1efec;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.shot .ph img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
+.shot .cap{display:block;padding:10px 14px;font-size:13px;color:#44403c;border-top:1px solid var(--line);line-height:1.55}
+.qa{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px;max-width:1020px}
+.qa .top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.qa .rule{font-weight:650;font-size:15px}
+.qa .basis{margin-left:auto;font-size:12px;color:var(--mut)}
+.qa .ev{font-size:13.5px;color:#57534e;margin-top:8px;line-height:1.75}
+.scorebox{display:grid;grid-template-columns:1fr 300px;gap:36px;max-width:1020px;align-items:start;margin-top:26px}
+.bars .row{display:grid;grid-template-columns:200px 1fr 40px;gap:12px;align-items:center;margin-bottom:11px;font-size:13.5px}
+.bars .track{display:block;background:#f0eeea;border-radius:999px;height:10px;overflow:hidden}
+.bars .fill{display:block;height:100%;border-radius:999px;background:#292524}
+.bars .val{font-weight:650;text-align:right;font-variant-numeric:tabular-nums}
+.big{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.big .k{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);font-weight:700}
+.big .v{font-size:36px;font-weight:700;margin-top:6px;line-height:1.1}
+.big .g{font-size:12.5px;color:var(--mut);margin-top:10px;line-height:1.6}
+.big+.big{margin-top:14px}
+details.dimwhy{margin-top:14px;font-size:13px;color:var(--mut)}
+details.dimwhy summary{cursor:pointer;font-weight:600}
+details.dimwhy div{margin-top:8px;line-height:1.8}
+.verdict{border-left:4px solid var(--pass);background:var(--card);border-radius:0 12px 12px 0;padding:24px 28px;max-width:980px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.verdict.dev{border-color:#d97706}.verdict.fail{border-color:var(--fail)}
+.verdict .vtitle{font-size:19px;font-weight:700;margin-bottom:12px}
+.verdict p{margin:0 0 12px;font-size:14.5px}
+.verdict p:last-child{margin-bottom:0}
+.devlist{margin:8px 0 0;padding-left:20px}
+.devlist li{margin-bottom:6px}
+footer{padding:38px 0 70px;color:var(--mut);font-size:12.5px;line-height:1.9}
+#lb{position:fixed;inset:0;background:rgba(15,12,10,.94);display:none;z-index:100;flex-direction:column;align-items:center;justify-content:center}
+#lb.on{display:flex}
+#lb img{max-width:92vw;max-height:84vh;box-shadow:0 24px 90px rgba(0,0,0,.55)}
+#lb-cap{color:#d6d3d1;font-size:13.5px;margin-top:16px;max-width:78vw;text-align:center;line-height:1.6}
+#lb-x{position:absolute;top:14px;right:28px;color:#a8a29e;font-size:30px;cursor:pointer}
+#lb-prev,#lb-next{position:absolute;top:50%;transform:translateY(-50%);color:#a8a29e;font-size:44px;cursor:pointer;user-select:none;padding:24px}
+#lb-prev{left:16px}#lb-next{right:16px}
+#lb-prev:hover,#lb-next:hover,#lb-x:hover{color:#fff}
+@media (max-width:900px){.gal.g3,.gal.g4{grid-template-columns:repeat(2,1fr)}.scorebox{grid-template-columns:1fr}.wrap{padding:0 20px}}
+</style></head><body>
+<nav class="nav"><div class="wrap"><span class="brand">试穿任务报告</span><span class="links"><a href="#p1">任务与需求</a><a href="#p2">做法</a><a href="#p3">输入与产出</a><a href="#p4">QA 质检</a><a href="#p5">合格判定</a></span><a class="home" href="index.html">&#8592; 八任务总览</a></div></nav>
+<header class="hero"><div class="wrap">
+<div class="eyebrow">Fashion Try-on Benchmark · Task Report</div>
+<h1>dayang · 棕格纹西装试稿（DOCX 明文验收）</h1>
+<div class="chips"><span class="chip dev">PASS with deviations（内容维度）</span><span class="chip fail">4K 未达</span></div>
+<div class="facts"><span>案例目录 <b>projects/2026-09-26-dayang-suit-image-test</b></span><span>成品 <b>3</b> 张</span><span>验收特写 <b>2</b> 张</span><span>quality_score <b>0.78</b></span><span>报告 <b>2026-10-28 · v2 重制</b></span></div>
+</div></header>
+<div class="wrap">
+<section id="p1"><div class="sh"><span class="no">01</span><h2>任务是什么 · 客户需求 · 做到什么程度</h2></div><div class="prose"><p><b>任务</b>：按《服装AIGC外协试稿制作要求.docx》——线稿版型 1:1 还原（平驳领两粒扣+斜插袋盖上衣；侧调节袢双扣+翻边裤脚裤）+ 棕格纹面料（4.5cm 格比）+ 指定配饰 + 指定模特姿势 + 纯白底自然柔光 + 4K 3:4。</p>
+<p><b>客户明文验收标准（docx &#167;五原文）</b>：① 服装版型、面料花型高度匹配参考；② 配饰严格遵循配饰参考图；③ 模特姿势与参考一致，无人体畸形、无穿模；④ 纯白背景光线柔和自然；⑤ 分辨率 3:4 符合要求、无明显 AI 瑕疵。</p>
+<p><b>做到的程度</b>：试验样（00045）一次通过——「线稿+面料图」输入组合直接生成真实格纹西装；正式+备选共 3 张。<b>指定配饰与姿态参考图不同：墨绿 T914 细斜纹领带（非黑领带）+黑双扣孟克鞋（非乐福）——以配饰参考图为准</b>。<span class="bad">4K 未达（1664&#215;2208）。</span></p></div></section>
+<section id="p2"><div class="sh"><span class="no">02</span><h2>怎么做的</h2></div><div class="prose"><p>链路同上。image2=西装线稿|裤线稿|面料图三联（4546&#215;1648）；image1=模卡全身裁片（model-full.png）；姿势条款=正面站立双手垂（按模特姿态参考图）。试验样先行验证线稿输入可行性。</p></div></section>
+<section id="p3"><div class="sh"><span class="no">03</span><h2>输入与产出可视化</h2></div>
+<h3 class="lab">输入 · 客户 brief 引用图</h3>
+<div class="gal g4"><a class="shot" href="assets/a067.png" data-cap="上衣线稿（Notch Slant Flap 2SB）"><span class="ph"><img loading="lazy" src="assets/a067.png" alt=""></span><span class="cap">上衣线稿（Notch Slant Flap 2SB）</span></a><a class="shot" href="assets/a068.png" data-cap="裤线稿（侧调节袢+翻边）"><span class="ph"><img loading="lazy" src="assets/a068.png" alt=""></span><span class="cap">裤线稿（侧调节袢+翻边）</span></a><a class="shot" href="assets/a069.png" data-cap="面料图（棕格纹 4.5cm 格比）"><span class="ph"><img loading="lazy" src="assets/a069.png" alt=""></span><span class="cap">面料图（棕格纹 4.5cm 格比）</span></a><a class="shot" href="assets/a070.jpeg" data-cap="模特姿态参考图（正面站立双手垂）"><span class="ph"><img loading="lazy" src="assets/a070.jpeg" alt=""></span><span class="cap">模特姿态参考图（正面站立双手垂）</span></a><a class="shot" href="assets/a071.jpeg" data-cap="指定领带（墨绿 T914 细斜纹）"><span class="ph"><img loading="lazy" src="assets/a071.jpeg" alt=""></span><span class="cap">指定领带（墨绿 T914 细斜纹）</span></a><a class="shot" href="assets/a072.jpeg" data-cap="指定皮鞋（黑色双扣孟克）"><span class="ph"><img loading="lazy" src="assets/a072.jpeg" alt=""></span><span class="cap">指定皮鞋（黑色双扣孟克）</span></a></div>
+<h3 class="lab">产出 · 成品图（点开看原图，左右方向键翻张）</h3>
+<div class="gal g3"><a class="shot" href="assets/a073.png" data-cap="<b>dayang_sample01 · PASS-dev · 正式候选（鞋型正确）</b>"><span class="ph"><img loading="lazy" src="assets/a073.png" alt=""></span><span class="cap"><b>dayang_sample01 · PASS-dev · 正式候选（鞋型正确）</b></span></a><a class="shot" href="assets/a074.png" data-cap="dayang_take02 · PASS-dev（鞋变德比·披露）"><span class="ph"><img loading="lazy" src="assets/a074.png" alt=""></span><span class="cap">dayang_take02 · PASS-dev（鞋变德比·披露）</span></a><a class="shot" href="assets/a075.png" data-cap="dayang_take03 · PASS-dev（鞋变德比·披露）"><span class="ph"><img loading="lazy" src="assets/a075.png" alt=""></span><span class="cap">dayang_take03 · PASS-dev（鞋变德比·披露）</span></a></div>
+<h3 class="lab">验收特写 · 关键区 2-3&#215; 放大</h3><div class="gal g4"><a class="shot" href="assets/a076.jpg" data-cap="上装 2&#215;（平驳领/双扣/袋盖/墨绿斜纹领带）"><span class="ph"><img loading="lazy" src="assets/a076.jpg" alt=""></span><span class="cap">上装 2&#215;（平驳领/双扣/袋盖/墨绿斜纹领带）</span></a><a class="shot" href="assets/a077.jpg" data-cap="鞋+翻边裤脚 2&#215;（双扣孟克清晰）"><span class="ph"><img loading="lazy" src="assets/a077.jpg" alt=""></span><span class="cap">鞋+翻边裤脚 2&#215;（双扣孟克清晰）</span></a></div>
+</section>
+<section id="p4"><div class="sh"><span class="no">04</span><h2>按本任务 QA 规则质检</h2></div>
+<div class="prose" style="margin-bottom:18px"><p style="font-size:13.5px;color:var(--mut)">任务级明文规则逐条核验 + 统一 rubric 八维度评分。及格线：hard gates 全过且 quality_score &#8805; 0.70。结论全部来自直接读图实测（find-defects-first + 关键区 2-3&#215; 特写），推断均已标注。</p></div>
+<div class="qa"><div class="top"><span class="rule">版型 1:1 按线稿（docx&#167;一）</span><span class="chip sm dev">PASS-dev</span><span class="basis">dy_jacket/dy_shoes 特写</span></div><div class="ev">平驳领/两粒扣/双袋盖斜插袋/翻边裤脚/侧调节袢——裁片核对；<b>左胸手巾袋缺失（线稿有 breast welt pocket）三张一致</b></div></div><div class="qa"><div class="top"><span class="rule">面料肌理花色高还原（docx&#167;一）</span><span class="chip sm pass">PASS</span><span class="basis">dy_jacket 特写</span></div><div class="ev">棕黑格纹+细蓝 overcheck、织纹真实、格比均匀</div></div><div class="qa"><div class="top"><span class="rule">配饰严格按配饰参考图（docx&#167;五②）</span><span class="chip sm dev">PASS-dev</span><span class="basis">dy_shoes（sample01 对/take02-03 偏）</span></div><div class="ev">墨绿斜纹领带+白衬衫+黑孟克鞋 &#10003;；take02/03 鞋变系带德比（偏离指定）</div></div><div class="qa"><div class="top"><span class="rule">姿势与参考一致·无畸形穿模（docx&#167;五③）</span><span class="chip sm pass">PASS</span><span class="basis">三张整图</span></div><div class="ev">正面站立双手垂对齐姿态参考；人体/手部/鞋型正常</div></div><div class="qa"><div class="top"><span class="rule">纯白背景自然柔光（docx&#167;五④）</span><span class="chip sm pass">PASS</span><span class="basis">整图</span></div><div class="ev">白底+柔光实测</div></div><div class="qa"><div class="top"><span class="rule">2K/4K·3:4 无 AI 瑕疵（docx&#167;五⑤）</span><span class="chip sm fail">FAIL（4K）</span><span class="basis">元数据+特写</span></div><div class="ev">3:4 &#10003;；<b>4K 未达（1664&#215;2208）</b>；无明显瑕疵（特写核对）</div></div>
+<div class="scorebox"><div class="bars"><div class="row"><span>Brief adherence <span style="color:#a8a29e">·15%</span></span><span class="track"><span class="fill" style="width:80%"></span></span><span class="val">4</span></div><div class="row"><span>Visual quality <span style="color:#a8a29e">·20%</span></span><span class="track"><span class="fill" style="width:80%"></span></span><span class="val">4</span></div><div class="row"><span>Brand consistency <span style="color:#a8a29e">·15%</span></span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">5</span></div><div class="row"><span>Refinement ability <span style="color:#a8a29e">·15%</span></span><span class="track"><span class="fill" style="width:80%"></span></span><span class="val">4</span></div><div class="row"><span>Cross-asset consistency <span style="color:#a8a29e">·10%</span></span><span class="track"><span class="fill" style="width:80%"></span></span><span class="val">4</span></div><div class="row"><span>Production readiness <span style="color:#a8a29e">·10%</span></span><span class="track"><span class="fill" style="width:40%"></span></span><span class="val">2</span></div><div class="row"><span>Efficiency <span style="color:#a8a29e">·5%</span></span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">5</span></div><details class="dimwhy"><summary>各维度评分依据</summary><div><div><b>Brief adherence</b> — 版型/面料/配饰/姿势达标；4K 未达</div><div><b>Visual quality</b> — 三张可用；手巾袋缺失+鞋型偏差披露</div><div><b>Brand consistency</b> — 配饰以指定参考图为准（纠正了姿态参考图的误导项）</div><div><b>Refinement ability</b> — 试验样先行，批量无返工</div><div><b>Cross-asset consistency</b> — 三张同款同面料</div><div><b>Production readiness</b> — 4K 缺席；spec/meta 齐</div><div><b>Efficiency</b> — 试验样+批量均一次过</div></div></details></div><div><div class="big"><div class="k">quality_score</div><div class="v">0.78</div><div class="g">统一 rubric 八维度加权归一（design-agent-v0/eval/rubrics/unified-design-agent-rubric-v0.1.md，来自 agentic-adhoc 仓库）</div></div><div class="big"><div class="k">gated_score</div><div class="v" style="font-size:17px;line-height:1.5;margin-top:10px">生产规格 gate 未过（4K）</div></div></div></div>
+</section>
+<section id="p5"><div class="sh"><span class="no">05</span><h2>合格判定</h2></div>
+<div class="verdict dev"><div class="vtitle">判定：内容维度合格（sample01 为正式候选），4K 规格未达</div><p>DOCX 五条验收标准逐条实测：①②③④ 过（含披露项：左胸手巾袋缺失、take02/03 鞋型偏离、格纹 repeat 目测均匀）；⑤ 的 3:4 过、4K 不过——与 shein/loungewear 同一链路能力上限，<b>等用户拍板 4K 方案后可统一补齐</b>。resolution 参数 1920 基准为本链上限（int8 模型），直接拉高基准的风险未验证。</p></div>
+</section>
+<footer>数据来源：本目录 gen_reports_v2.py（判定/QA/评分原样取自 v1，未改动结论）· 各 case spec/meta.json（模型/prompt/seed/输入输出哈希）· 工作文档 2026-10-27_各图生成过程与代码清单_工作文档.md。<br>benchmark 红线：client-brief/ 字节不动 · 不虚构缺失数据 · 历史生成结果不作输入参考 · 参考对标图（不可直接用）从未喂给任何模型。</footer>
+</div>
+<div id="lb"><span id="lb-x">&times;</span><span id="lb-prev">&#8249;</span><span id="lb-next">&#8250;</span><img id="lb-img" alt=""><div id="lb-cap"></div></div>
+<script>
+(function(){
+var lb=document.getElementById('lb'),img=document.getElementById('lb-img'),cap=document.getElementById('lb-cap');
+var list=[],idx=0;
+function render(){var a=list[idx];if(!a)return;img.src=a.getAttribute('href');cap.innerHTML=a.getAttribute('data-cap')||'';lb.classList.add('on');}
+function openLb(a){list=[].slice.call(a.closest('.gal').querySelectorAll('a.shot'));idx=list.indexOf(a);render();}
+function step(d){if(!list.length)return;idx=(idx+d+list.length)%list.length;render();}
+document.addEventListener('click',function(e){
+  var t=e.target;
+  var a=t.closest?t.closest('a.shot'):null;
+  if(a){e.preventDefault();openLb(a);return;}
+  if(t.closest&&t.closest('#lb-next')){step(1);return;}
+  if(t.closest&&t.closest('#lb-prev')){step(-1);return;}
+  if(t.id==='lb-x'||t.id==='lb'){lb.classList.remove('on');}
+});
+document.addEventListener('keydown',function(e){
+  if(!lb.classList.contains('on'))return;
+  if(e.key==='Escape')lb.classList.remove('on');
+  else if(e.key==='ArrowRight')step(1);
+  else if(e.key==='ArrowLeft')step(-1);
+});
+})();
+</script>
+</body></html>

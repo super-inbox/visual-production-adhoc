@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>shein · A/B 两款波西米亚两件套（每款 5 views） · 任务报告</title><style>
+:root{--paper:#f6f3ed;--ink:#171410;--mut:#6f675a;--line:rgba(23,20,16,.16);--line2:rgba(23,20,16,.55);
+--wash:#ece7dc;--acc:#ac3a20;
+--pass:#2e5e41;--dev:#8f6410;--fail:#9c2f1f;--todo:#4a4463}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--paper);color:var(--ink);font:15.5px/1.85 "Microsoft YaHei","PingFang SC","Segoe UI",system-ui,sans-serif}
+a{color:inherit}
+::selection{background:var(--acc);color:#fff}
+.wrap{max-width:1200px;margin:0 auto;padding:0 44px}
+/* ---------- masthead ---------- */
+.mast{background:var(--ink);color:var(--paper)}
+.mast .wrap{padding-top:48px;position:relative}
+.kick{display:flex;justify-content:space-between;align-items:baseline;gap:20px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,243,237,.6)}
+.kick b{color:var(--paper);font-weight:400}
+.mast h1{font-size:50px;line-height:1.2;letter-spacing:.01em;margin:24px 0 18px;font-weight:700;max-width:880px}
+.stand{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;font-size:13px;color:rgba(246,243,237,.72);margin-bottom:44px}
+.stand .dir{margin-right:10px;font-family:Georgia,serif;letter-spacing:.02em}
+.chip{font-size:12px;font-weight:600;padding:3px 11px;border:1px solid;border-radius:2px;letter-spacing:.05em;white-space:nowrap}
+.chip.pass{background:rgba(46,94,65,.1);color:#24523a;border-color:rgba(46,94,65,.4)}
+.chip.dev{background:rgba(143,100,16,.1);color:#7d5710;border-color:rgba(143,100,16,.4)}
+.chip.fail{background:rgba(156,47,31,.08);color:#8a2c1e;border-color:rgba(156,47,31,.4)}
+.chip.todo{background:rgba(74,68,99,.08);color:#443e63;border-color:rgba(74,68,99,.35)}
+.mast .chip{background:transparent}
+.mast .chip.pass{color:#9ecfad;border-color:rgba(158,207,173,.5)}
+.mast .chip.dev{color:#e3c47a;border-color:rgba(227,196,122,.5)}
+.mast .chip.fail{color:#e79a8a;border-color:rgba(231,154,138,.5)}
+.mast .chip.todo{color:#b9b4dd;border-color:rgba(185,180,221,.5)}
+.seal{position:absolute;right:44px;top:96px;transform:rotate(-2deg);border:2px solid rgba(246,243,237,.9);outline:1px solid rgba(246,243,237,.45);outline-offset:5px;padding:13px 24px 11px;text-align:center;color:var(--paper)}
+.seal .w{font-family:Georgia,serif;font-size:25px;letter-spacing:.14em;white-space:nowrap}
+.seal .z{font-size:10.5px;letter-spacing:.42em;margin-top:5px;color:rgba(246,243,237,.6);margin-right:-.42em}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(246,243,237,.28);margin-top:8px}
+.stats .cell{padding:18px 22px 26px;border-left:1px solid rgba(246,243,237,.28)}
+.stats .cell:first-child{border-left:none;padding-left:0}
+.stats .k{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,243,237,.5)}
+.stats .v{font-family:Georgia,serif;font-size:22px;margin-top:7px;line-height:1.4}
+.stats .v small{font-size:13px;color:rgba(246,243,237,.62);font-family:"Microsoft YaHei",sans-serif;margin-left:6px}
+.stats .v.txt{font-size:14px;font-family:"Microsoft YaHei",sans-serif}
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:40;background:rgba(246,243,237,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:52px;padding-top:0;padding-bottom:0}
+.brand{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+.brand b{color:var(--acc);font-weight:400}
+.nav .lk{display:flex;gap:22px;font-size:13px;color:var(--mut)}
+.nav .lk a{text-decoration:none}
+.nav .lk a:hover{color:var(--ink)}
+.nav .ix{margin-left:auto;font-size:12.5px;color:var(--mut);text-decoration:none;white-space:nowrap}
+.nav .ix:hover{color:var(--ink)}
+/* ---------- sections ---------- */
+section{padding:56px 0 62px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+.sh{display:flex;align-items:baseline;gap:18px;margin-bottom:30px}
+.sh .no{font-family:Georgia,serif;font-size:16px;color:var(--acc);letter-spacing:.06em}
+.sh h2{font-size:27px;margin:0;font-weight:700;letter-spacing:.01em}
+.sh .en{margin-left:auto;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);white-space:nowrap}
+.prose{max-width:900px}
+.prose p{margin:0 0 15px}
+.prose .bad{color:var(--fail);font-weight:600}.prose .warn{color:var(--dev);font-weight:600}.prose .ok{color:var(--pass);font-weight:600}
+/* ---------- galleries ---------- */
+.lab{display:flex;align-items:center;gap:14px;margin:38px 0 16px;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--mut)}
+.lab .r{flex:1;height:1px;background:var(--line)}
+.gal{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.shot{display:block;text-decoration:none;border:1px solid var(--line);background:#fff}
+.shot:hover{border-color:var(--line2)}
+.shot .ph{aspect-ratio:3/4;background:var(--wash);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.shot .ph img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
+.shot .cap{display:block;padding:9px 13px 10px;font-size:12.5px;line-height:1.6;color:#4a443a;border-top:1px solid var(--line);background:#fff}
+.shot .cap b.fn{font-family:Georgia,serif;color:var(--acc);font-weight:400;margin-right:9px;font-size:12px;letter-spacing:.04em}
+/* ---------- rework log ---------- */
+.rw{max-width:1120px}
+.rrow{display:grid;grid-template-columns:250px 1fr 130px;gap:26px;padding:18px 0;border-top:1px solid var(--line);align-items:start}
+.rrow:last-child{border-bottom:1px solid var(--line)}
+.rstep .rn{font-size:14px;font-weight:700;line-height:1.7}
+.rbody p{margin:0;font-size:13.5px;color:#514b40;line-height:1.9}
+.rst{justify-self:end}
+.rwhint{max-width:900px;font-size:12px;color:var(--mut);margin:12px 0 0}
+/* ---------- QA 行式清单 ---------- */
+.qanote{max-width:900px;font-size:13px;color:var(--mut);margin-bottom:20px}
+.qa{border-top:1px solid var(--line);padding:20px 0;display:grid;grid-template-columns:290px 1fr 160px;gap:26px;max-width:1120px}
+.qa:last-of-type{border-bottom:1px solid var(--line)}
+.qa .rule{font-weight:700;font-size:14.5px;line-height:1.65}
+.qa .basis{font-size:11.5px;color:var(--mut);margin-top:9px;line-height:1.6}
+.qa .ev{font-size:13.5px;color:#514b40;line-height:1.9}
+.qa .st{justify-self:end}
+.vchip{font-size:11.5px;font-weight:700;padding:4px 11px;border:1px solid;border-radius:2px;white-space:nowrap;letter-spacing:.08em}
+.vchip.pass{color:var(--pass);border-color:rgba(46,94,65,.55);background:rgba(46,94,65,.06)}
+.vchip.dev{color:var(--dev);border-color:rgba(143,100,16,.55);background:rgba(143,100,16,.06)}
+.vchip.fail{color:var(--fail);border-color:rgba(156,47,31,.55);background:rgba(156,47,31,.06)}
+.vchip.todo{color:var(--todo);border-color:rgba(74,68,99,.5);background:rgba(74,68,99,.06)}
+/* ---------- rubric ---------- */
+.rubric{display:grid;grid-template-columns:1fr 350px;gap:52px;margin-top:46px;max-width:1120px;align-items:start}
+.bars .row{display:grid;grid-template-columns:225px 1fr 36px;gap:16px;align-items:center;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
+.bars .nm b{font-weight:600}
+.bars .nm .wt{color:var(--mut);font-size:11px;margin-left:7px;font-family:Georgia,serif}
+.bars .track{display:block;background:var(--wash);height:7px;position:relative}
+.bars .fill{display:block;height:100%;background:var(--ink)}
+.bars .val{font-family:Georgia,serif;text-align:right;font-size:15px}
+.dimwhy{margin-top:16px;font-size:12.5px;color:var(--mut)}
+.dimwhy summary{cursor:pointer;letter-spacing:.06em}
+.dimwhy div{margin-top:10px;line-height:1.9}
+.dimwhy b{color:#514b40;font-weight:600}
+.scorecard{border:1.5px solid var(--ink);padding:24px 28px 22px;background:rgba(255,255,255,.35)}
+.scorecard .k{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--mut)}
+.scorecard .v{font-family:Georgia,serif;font-size:62px;line-height:1.05;margin:10px 0 6px}
+.scorecard .v.zh{font-size:15px;font-family:"Microsoft YaHei",sans-serif;line-height:1.75;font-weight:600}
+.scorecard .g{font-size:12px;color:var(--mut);line-height:1.75}
+.scorecard+.scorecard{margin-top:16px}
+/* ---------- verdict ---------- */
+.verdict{border:1.5px solid var(--ink);padding:32px 36px 28px;max-width:1120px;position:relative;background:rgba(255,255,255,.35)}
+.verdict .vtag{position:absolute;top:-10px;left:28px;background:var(--paper);padding:0 14px;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--acc)}
+.verdict .vtitle{font-size:21px;font-weight:700;margin-bottom:14px;line-height:1.5}
+.verdict p{margin:0 0 13px;font-size:14.5px;line-height:1.9}
+.verdict p:last-child{margin-bottom:0}
+.devlist{margin:10px 0 0;padding-left:0;list-style:none;columns:2;column-gap:44px}
+.devlist li{margin-bottom:8px;break-inside:avoid;padding-left:18px;position:relative;font-size:13.5px;color:#514b40}
+.devlist li:before{content:"—";position:absolute;left:0;color:var(--acc)}
+/* ---------- footer ---------- */
+footer{margin-top:72px;border-top:1px solid var(--line2);padding:20px 0 64px;font-size:12px;color:var(--mut);line-height:2.05}
+footer .fm{font-family:Georgia,serif;letter-spacing:.16em;text-transform:uppercase;font-size:10.5px;color:var(--ink);display:block;margin-bottom:6px}
+/* ---------- index TOC ---------- */
+.toc{border-top:1px solid var(--line2);margin-top:52px}
+.trow{display:grid;grid-template-columns:56px 78px 1fr 320px 96px;gap:22px;align-items:center;padding:17px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.trow:hover{background:rgba(23,20,16,.035)}
+.trow .no{font-family:Georgia,serif;font-size:21px;color:var(--acc)}
+.trow .th{width:78px;height:98px;background:var(--wash);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.trow .th img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
+.trow .tt b{font-size:16.5px;display:block;line-height:1.5}
+.trow .tt b .k2{color:var(--acc);font-family:Georgia,serif;font-weight:400;margin-right:10px}
+.trow .tt span{font-size:12.5px;color:var(--mut);font-family:Georgia,serif}
+.trow .tc{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.trow .sc{font-family:Georgia,serif;font-size:30px;text-align:right;line-height:1}
+.trow .sc small{display:block;font-family:"Microsoft YaHei",sans-serif;font-size:9.5px;color:var(--mut);letter-spacing:.22em;text-transform:uppercase;margin-top:7px}
+/* ---------- lightbox ---------- */
+#lb{position:fixed;inset:0;background:rgba(13,11,9,.95);display:none;z-index:100;flex-direction:column;align-items:center;justify-content:center}
+#lb.on{display:flex}
+#lb img{max-width:92vw;max-height:84vh;box-shadow:0 24px 90px rgba(0,0,0,.55)}
+#lb-cap{color:#d6d3d1;font-size:13.5px;margin-top:16px;max-width:78vw;text-align:center;line-height:1.6}
+#lb-x{position:absolute;top:14px;right:28px;color:#a8a29e;font-size:30px;cursor:pointer}
+#lb-prev,#lb-next{position:absolute;top:50%;transform:translateY(-50%);color:#a8a29e;font-size:44px;cursor:pointer;user-select:none;padding:24px}
+#lb-prev{left:16px}#lb-next{right:16px}
+#lb-prev:hover,#lb-next:hover,#lb-x:hover{color:#fff}
+@media (max-width:1000px){.gal.g3,.gal.g4{grid-template-columns:repeat(2,1fr)}.rubric{grid-template-columns:1fr}.wrap{padding:0 20px}.seal{display:none}.trow{grid-template-columns:40px 1fr 80px}}
+</style></head><body>
+<nav class="nav"><div class="wrap"><span class="brand">FT<b>/</b>B · 任务报告</span><span class="lk"><a href="#p1">任务与需求</a><a href="#p2">做法</a><a href="#p3">输入与产出</a><a href="#p4">QA 质检</a><a href="#p5">合格判定</a></span></div></nav>
+<header class="mast"><div class="wrap">
+<div class="kick"><span>Fashion Try-on Benchmark · Task Report</span><span>Report <b>&#8470; 03 / 08</b></span></div>
+<h1>A/B 两款波西米亚两件套（每款 5 views）</h1>
+<div class="stand"><span class="dir">shein</span><span class="dir">projects/2026-09-15-shein-image-test</span><span class="chip dev">姿势与服装维度 PASS</span><span class="chip fail">生产规格 FAIL（3584&#215;4800/精修未达）</span><span class="chip todo">4K 方案待用户拍板</span></div>
+<div class="seal"><div class="w">FAIL</div><div class="z">不合格</div></div>
+<div class="stats">
+<div class="cell"><div class="k">Outputs</div><div class="v">9<small>张成品</small></div></div>
+<div class="cell"><div class="k">Close-ups</div><div class="v">3<small>张验收特写</small></div></div>
+<div class="cell"><div class="k">Quality Score</div><div class="v">0.68<small>/ 1.00</small></div></div>
+<div class="cell"><div class="k">Case Directory</div><div class="v txt">projects/2026-09-15-shein-image-test</div></div>
+</div>
+</div></header>
+<div class="wrap">
+<section id="p1"><div class="sh"><span class="no">01</span><h2>任务是什么 · 客户需求 · 做到什么程度</h2><span class="en">Task &amp; Brief</span></div><div class="prose"><p><b>任务</b>：A 款（藏青波西米亚两件套）与 B 款（黑色挂脖菠萝印花两件套），每款复刻 5 个 views。</p>
+<p><b>客户明文需求</b>：① initial_query：「3:4比例，<b>4K分辨率（3584&#215;4800）</b>，含精修可直接上架」；② README 分工：<b>样衣图 owns garment details；姿势参考 owns poses</b>（A/B 款各 5 张姿势参考图）；搭配需求 owns styling；模版以及模特 supplies model/scene；③ record quality_gates（历史 internal QA 口径）：每款 5 views、10 张唯一、3584&#215;4800 RGB JPEG。</p>
+<p><b>做到的程度</b>：姿势违规（首批 10 张全部自编姿势、0 张姿势参考）已整改——10-28 重摆批后 <b>A/B 各 5 张姿势参考全覆盖</b>；服装细节按样衣图逐区 3&#215; 特写核对；中缝竖纹经样衣三视定案为「异款裙特征、非本款缺陷」，NO-stripe 条款正确。<span class="bad">4K 缺口：链路 1920 基准实出 1664&#215;2208，无通用超分模型——3584&#215;4800 未达成，需用户拍板方案。</span></p></div></section>
+<section id="p2"><div class="sh"><span class="no">02</span><h2>怎么做的</h2><span class="en">Method</span></div><div class="prose"><p>链路同上（--resolution 1920 强制，因 B 模特图小）。系统性事故「双联拼图」（A05/B01fix/B02/B04 连续）定位为静态中性取景触发，修正一律加单人硬条款（NOT a diptych...）。10-28 姿势对齐批：A06/A07/A08 + B04fix2&#8594;B04fix2b、B02fix2&#8594;B02fix2c/B03fixb，姿势描述从姿势参考图逐张翻译成 extras 文本；B04fix2 首跑姿势未达成，强化「arms behind back」措辞+换 seed 后达成。</p></div><div class="lab"><span>返工与优化记录 · Rework Log</span><span class="r"></span></div><div class="rw"><div class="rrow"><div class="rstep"><span class="rn">初跑批 · 10 张</span></div><div class="rbody"><p>两类系统性缺陷：① 姿势全部自编、0 张对齐姿势参考（违反 README「姿势参考 owns poses」明文）；② 「双联拼图」事故 4 例（A05/B01fix/B02/B04）——静态中性取景触发模型把单人画成两人</p></div><div class="rst"><span class="vchip fail">缺陷</span></div></div><div class="rrow"><div class="rstep"><span class="rn">第 1 轮 · 双联专项修复</span></div><div class="rbody"><p>每张加「单人单框」硬条款（NOT a diptych...）→ A05fix/B01fix2/B02fix/B04fix2 四张重跑，实测全部单人，双联清零；姿势问题未动</p></div><div class="rst"><span class="vchip dev">部分修复</span></div></div><div class="rrow"><div class="rstep"><span class="rn">第 2 轮 · 姿势整改批（10-28）</span></div><div class="rbody"><p>5 张姿势参考逐张翻译成姿势描述文本写入 prompt，10 张全部重摆（A06/A07/A08 + B04fix2→2b、B02fix2→2c、B03fixb 等）→ A/B 各 5 张姿势参考全覆盖；本轮 B04fix2 首摆姿势仍未达成</p></div><div class="rst"><span class="vchip dev">部分修复</span></div></div><div class="rrow"><div class="rstep"><span class="rn">第 3 轮 · B04 二跑</span></div><div class="rbody"><p>强化「arms behind back」措辞 + 换 seed → B04fix2b 双手背后姿势达成，A/B 姿势参考全部闭环</p></div><div class="rst"><span class="vchip pass">闭环</span></div></div></div><p class="rwhint">口径：每轮 = 识别缺陷 &#8594; 改 prompt/条款/seed &#8594; 重跑 &#8594; 特写复验；一次通过的 take 不列。seed/哈希全量见 spec.json / meta.json。</p></section>
+<section id="p3"><div class="sh"><span class="no">03</span><h2>输入与产出可视化</h2><span class="en">Visual Record</span></div>
+<div class="lab"><span>输入 · 客户 brief 引用图</span><span class="r"></span></div>
+<div class="gal g4"><a class="shot" href="assets/a021.png" data-cap="A 款样衣图（owns A 细节）"><span class="ph"><img loading="lazy" src="assets/a021.png" alt=""></span><span class="cap"><b class="fn">Fig.01</b>A 款样衣图（owns A 细节）</span></a><a class="shot" href="assets/a022.png" data-cap="B 款样衣图正面（owns B 细节）"><span class="ph"><img loading="lazy" src="assets/a022.png" alt=""></span><span class="cap"><b class="fn">Fig.02</b>B 款样衣图正面（owns B 细节）</span></a><a class="shot" href="assets/a023.jpeg" data-cap="B 款样衣图背面（X 交叉带）"><span class="ph"><img loading="lazy" src="assets/a023.jpeg" alt=""></span><span class="cap"><b class="fn">Fig.03</b>B 款样衣图背面（X 交叉带）</span></a><a class="shot" href="assets/a024.png" data-cap="B 姿势参考1（双手背后全身）"><span class="ph"><img loading="lazy" src="assets/a024.png" alt=""></span><span class="cap"><b class="fn">Fig.04</b>B 姿势参考1（双手背后全身）</span></a><a class="shot" href="assets/a025.png" data-cap="B 姿势参考4（单手提裙摆）"><span class="ph"><img loading="lazy" src="assets/a025.png" alt=""></span><span class="cap"><b class="fn">Fig.05</b>B 姿势参考4（单手提裙摆）</span></a><a class="shot" href="assets/a026.png" data-cap="B 搭配需求（owns styling）"><span class="ph"><img loading="lazy" src="assets/a026.png" alt=""></span><span class="cap"><b class="fn">Fig.06</b>B 搭配需求（owns styling）</span></a></div>
+<div class="lab"><span>产出 · 成品图（点开看原图，左右方向键翻张）</span><span class="r"></span></div>
+<div class="gal g3"><a class="shot" href="assets/a027.png" data-cap="A06 = A姿势参考1（提裙摆）· PASS-dev"><span class="ph"><img loading="lazy" src="assets/a027.png" alt=""></span><span class="cap"><b class="fn">Fig.07</b>A06 = A姿势参考1（提裙摆）· PASS-dev</span></a><a class="shot" href="assets/a028.png" data-cap="A07 = A姿势参考4（扶腰·镂空呈现）· PASS-dev"><span class="ph"><img loading="lazy" src="assets/a028.png" alt=""></span><span class="cap"><b class="fn">Fig.08</b>A07 = A姿势参考4（扶腰·镂空呈现）· PASS-dev</span></a><a class="shot" href="assets/a029.png" data-cap="A08 双手提裙摆加拍 · PASS-dev"><span class="ph"><img loading="lazy" src="assets/a029.png" alt=""></span><span class="cap"><b class="fn">Fig.09</b>A08 双手提裙摆加拍 · PASS-dev</span></a><a class="shot" href="assets/a030.png" data-cap="B04fix2b = B姿势参考1（双手背后）· PASS-dev"><span class="ph"><img loading="lazy" src="assets/a030.png" alt=""></span><span class="cap"><b class="fn">Fig.10</b>B04fix2b = B姿势参考1（双手背后）· PASS-dev</span></a><a class="shot" href="assets/a031.png" data-cap="B02fix2c = B姿势参考2（躯干·镂空呈现）· PASS-dev"><span class="ph"><img loading="lazy" src="assets/a031.png" alt=""></span><span class="cap"><b class="fn">Fig.11</b>B02fix2c = B姿势参考2（躯干·镂空呈现）· PASS-dev</span></a><a class="shot" href="assets/a032.png" data-cap="B03fixb = B姿势参考3（近景双手背后）· PASS-dev"><span class="ph"><img loading="lazy" src="assets/a032.png" alt=""></span><span class="cap"><b class="fn">Fig.12</b>B03fixb = B姿势参考3（近景双手背后）· PASS-dev</span></a><a class="shot" href="assets/a033.png" data-cap="B02fix2 = B姿势参考4（提裙摆）· PASS-dev"><span class="ph"><img loading="lazy" src="assets/a033.png" alt=""></span><span class="cap"><b class="fn">Fig.13</b>B02fix2 = B姿势参考4（提裙摆）· PASS-dev</span></a><a class="shot" href="assets/a034.png" data-cap="B05 = B姿势参考5（背面回头）· PASS"><span class="ph"><img loading="lazy" src="assets/a034.png" alt=""></span><span class="cap"><b class="fn">Fig.14</b>B05 = B姿势参考5（背面回头）· PASS</span></a><a class="shot" href="assets/a035.png" data-cap="A01 正面垂手（首批自编姿势·退役披露件）"><span class="ph"><img loading="lazy" src="assets/a035.png" alt=""></span><span class="cap"><b class="fn">Fig.15</b>A01 正面垂手（首批自编姿势·退役披露件）</span></a></div>
+<div class="lab"><span>验收特写 · 关键区 2-3&#215; 放大</span><span class="r"></span></div><div class="gal g4"><a class="shot" href="assets/a036.jpg" data-cap="A07 侧腰镂空 3&#215; 特写（金链描边）"><span class="ph"><img loading="lazy" src="assets/a036.jpg" alt=""></span><span class="cap"><b class="fn">Fig.16</b>A07 侧腰镂空 3&#215; 特写（金链描边）</span></a><a class="shot" href="assets/a037.jpg" data-cap="B04fix2b 中缝 3&#215;（无竖纹·条款生效）"><span class="ph"><img loading="lazy" src="assets/a037.jpg" alt=""></span><span class="cap"><b class="fn">Fig.17</b>B04fix2b 中缝 3&#215;（无竖纹·条款生效）</span></a><a class="shot" href="assets/a038.jpg" data-cap="B04fix2b 腰头 3&#215;（黄黑菱形带对齐）"><span class="ph"><img loading="lazy" src="assets/a038.jpg" alt=""></span><span class="cap"><b class="fn">Fig.18</b>B04fix2b 腰头 3&#215;（黄黑菱形带对齐）</span></a></div>
+</section>
+<section id="p4"><div class="sh"><span class="no">04</span><h2>按本任务 QA 规则质检</h2><span class="en">QA &amp; Scoring</span></div>
+<div class="qanote">任务级明文规则逐条核验 + 统一 rubric 八维度评分。及格线：hard gates 全过且 quality_score &#8805; 0.70。结论全部来自直接读图实测（find-defects-first + 关键区 2-3&#215; 特写），推断均已标注。</div>
+<div class="qa"><div><div class="rule">样衣图 owns garment details</div><div class="basis">qa_* 特写 + 10-28 批特写</div></div><div class="ev">A：胸前黑绳结带/喇叭袖雏菊心形袖口/金链腰际带/腰隙金链镂空/花卉纵列+鸟纹+雏菊心形裙底边——逐区特写核对（镂空呈现度按 take 披露）；B：黑金菱形挂脖边/红牡丹黄菠萝绿叶橙佩斯利/黄金几何腰带/背面 X 交叉+颈后结——对齐</div><div class="st"><span class="vchip pass">PASS</span></div></div><div class="qa"><div><div class="rule">姿势参考 owns poses（README 明文）</div><div class="basis">spec_A/B per_take 审计注记</div></div><div class="ev">首批违规（自编姿势）→ 10-28 整改后 A/B 各 5 张姿势参考全覆盖：A ref1-5=A06/A05fix/A03/A07/A04；B ref1-5=B04fix2b/B02fix2c/B03fixb/B02fix2/B05</div><div class="st"><span class="vchip pass">PASS（整改后）</span></div></div><div class="qa"><div><div class="rule">单人单框（系统性事故整改）</div><div class="basis">工作文档&#167;系统性发现</div></div><div class="ev">双联事故 4 例（A05/B01fix/B02/B04）全部修复：A05fix/B01fix2/B02fix/B04fix2b 实测单人；修复批全部带单人硬条款</div><div class="st"><span class="vchip pass">PASS</span></div></div><div class="qa"><div><div class="rule">中缝竖纹（B01 事故定案）</div><div class="basis">10-28 定案记录</div></div><div class="ev">样衣三视（正/侧/背）无中缝带；姿势参考 5 张有此带但为白底黄百合异款裙 → NO-stripe 条款正确，10-28 批实测无中缝</div><div class="st"><span class="vchip pass">PASS（维持原判）</span></div></div><div class="qa"><div><div class="rule">3584&#215;4800 4K（initial_query 明文）</div><div class="basis">链路参数 + models/upscale_models 清单</div></div><div class="ev">实出 1664&#215;2208（--resolution 1920 上限）；ComfyUI 无通用超分模型</div><div class="st"><span class="vchip fail">FAIL</span></div></div><div class="qa"><div><div class="rule">含精修可直接上架</div><div class="basis">同上</div></div><div class="ev">无精修工序（Gemini native-4K 为历史项目路径，本链不具备）</div><div class="st"><span class="vchip fail">FAIL</span></div></div><div class="qa"><div><div class="rule">搭配按搭配需求/styling 参考</div><div class="basis">姿势参考/搭配需求图对照</div></div><div class="ev">B：银垂坠耳环/银镯/戒指/米色绑带平底凉鞋 &#10003;；A：赤脚（参考图有白色平底拖鞋——披露）</div><div class="st"><span class="vchip dev">PASS-dev</span></div></div>
+<div class="rubric"><div class="bars"><div class="row"><span class="nm"><b>Brief adherence</b><span class="wt">15%</span></span><span class="track"><span class="fill" style="width:80%"></span></span><span class="val">4</span></div><div class="row"><span class="nm"><b>Visual quality</b><span class="wt">20%</span></span><span class="track"><span class="fill" style="width:80%"></span></span><span class="val">4</span></div><div class="row"><span class="nm"><b>Brand consistency</b><span class="wt">15%</span></span><span class="track"><span class="fill" style="width:80%"></span></span><span class="val">4</span></div><div class="row"><span class="nm"><b>Refinement ability</b><span class="wt">15%</span></span><span class="track"><span class="fill" style="width:80%"></span></span><span class="val">4</span></div><div class="row"><span class="nm"><b>Cross-asset consistency</b><span class="wt">10%</span></span><span class="track"><span class="fill" style="width:80%"></span></span><span class="val">4</span></div><div class="row"><span class="nm"><b>Production readiness</b><span class="wt">10%</span></span><span class="track"><span class="fill" style="width:40%"></span></span><span class="val">2</span></div><div class="row"><span class="nm"><b>Efficiency</b><span class="wt">5%</span></span><span class="track"><span class="fill" style="width:60%"></span></span><span class="val">3</span></div><details class="dimwhy"><summary>各维度评分依据（逐条）</summary><div><div><b>Brief adherence</b> — 服装/姿势/搭配维度达标；4K 与精修两项明文规格未达</div><div><b>Visual quality</b> — 成品可用；镂空形态偏差/腰头图案漂移/底边带层缺失逐张披露</div><div><b>Brand consistency</b> — 样衣细节高度还原；镂空等结构项呈现度不一</div><div><b>Refinement ability</b> — 姿势未达成经一轮强化措辞+换 seed 闭环（B04fix2&#8594;2b）</div><div><b>Cross-asset consistency</b> — 同款多 take 服装一致；A/B 背景色调按 prompt 统一</div><div><b>Production readiness</b> — 4K/精修/JPEG 规格未达；meta 齐备</div><div><b>Efficiency</b> — B04fix2 一次重跑；双联事故 4 例返工</div></div></details></div><div><div class="scorecard"><div class="k">Quality Score</div><div class="v">0.68</div><div class="g">统一 rubric 八维度加权归一 · design-agent-v0/eval/rubrics/unified-design-agent-rubric-v0.1.md（agentic-adhoc 仓库）</div></div><div class="scorecard"><div class="k">Gated Score</div><div class="v zh">生产有效性 gate 未过（4K/精修）&#8594; gated 0 分</div></div></div></div>
+</section>
+<section id="p5"><div class="sh"><span class="no">05</span><h2>合格判定</h2><span class="en">Verdict</span></div>
+<div class="verdict"><span class="vtag">Final Verdict</span><div class="vtitle">判定：内容维度合格，生产规格维度不合格</div><p>姿势（对齐 5 参考）、服装（样衣细节）、单人构图、搭配——按任务明文规则逐条实测通过（整改后）。但 initial_query 的 3584&#215;4800 与「含精修可直接上架」两项<b>链路能力外</b>（qwen 链 1920 上限、无通用超分模型、无精修工序），按统一 rubric 生产有效性 gate 判 FAIL，gated_score 记 0。<b>这不是重跑能解决的——需要用户拍板</b>：①装 ESRGAN 类超分模型（环境级动作）②直接大分辨率生成（质量未知）③维持现状按能力上限披露交付。</p>
+<p>偏差披露（全量见 spec per_take）：</p><ul class="devlist"><li>A 组镂空呈现度不一（A06/A08 未呈现/A07 偏大偏圆）</li><li>B 组腰头图案漂移、底边绿叶带层缺失、B02fix2c 角度偏 3/4</li><li>A 组赤脚 vs 参考图拖鞋</li><li>首批自编姿势 5 张退役为披露件</li></ul></div>
+</section>
+<footer><span class="fm">Fashion Try-on Benchmark — Task Report &#8470;03</span>
+数据来源：本目录 gen_reports_v3.py（版式 v3，判定/QA/评分数据原样取自 v1/v2，未改动结论）· 各 case spec/meta.json（模型/prompt/seed/输入输出哈希）· 工作文档 2026-10-27_各图生成过程与代码清单_工作文档.md。<br>
+benchmark 红线：client-brief/ 字节不动 · 不虚构缺失数据 · 历史生成结果不作输入参考 · 参考对标图（不可直接用）从未喂给任何模型。</footer>
+</div>
+<div id="lb"><span id="lb-x">&times;</span><span id="lb-prev">&#8249;</span><span id="lb-next">&#8250;</span><img id="lb-img" alt=""><div id="lb-cap"></div></div>
+<script>
+(function(){
+var lb=document.getElementById('lb'),img=document.getElementById('lb-img'),cap=document.getElementById('lb-cap');
+var list=[],idx=0;
+function render(){var a=list[idx];if(!a)return;img.src=a.getAttribute('href');cap.innerHTML=a.getAttribute('data-cap')||'';lb.classList.add('on');}
+function openLb(a){list=[].slice.call(a.closest('.gal').querySelectorAll('a.shot'));idx=list.indexOf(a);render();}
+function step(d){if(!list.length)return;idx=(idx+d+list.length)%list.length;render();}
+document.addEventListener('click',function(e){
+  var t=e.target;
+  var a=t.closest?t.closest('a.shot'):null;
+  if(a){e.preventDefault();openLb(a);return;}
+  if(t.closest&&t.closest('#lb-next')){step(1);return;}
+  if(t.closest&&t.closest('#lb-prev')){step(-1);return;}
+  if(t.id==='lb-x'||t.id==='lb'){lb.classList.remove('on');}
+});
+document.addEventListener('keydown',function(e){
+  if(!lb.classList.contains('on'))return;
+  if(e.key==='Escape')lb.classList.remove('on');
+  else if(e.key==='ArrowRight')step(1);
+  else if(e.key==='ArrowLeft')step(-1);
+});
+})();
+</script>
+</body></html>
