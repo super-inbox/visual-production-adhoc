@@ -1,0 +1,52 @@
+{
+  "imported_on": "2026-11-04",
+  "source_repository": "https://github.com/super-inbox/visual-search-adhoc",
+  "source_commit": "2d5559593ccdb922603dddf458018e5935f5239e",
+  "research_date": "2026-10-05",
+  "source_deleted": false,
+  "files": [
+    {
+      "file": "VISUAL_PRODUCTION_SOTA_AND_WORKFLOW_LANDSCAPE.md",
+      "source_url": "https://github.com/super-inbox/visual-search-adhoc/blob/2d5559593ccdb922603dddf458018e5935f5239e/docs/daily_report/10.05/visual-production-research/VISUAL_PRODUCTION_SOTA_AND_WORKFLOW_LANDSCAPE.md",
+      "copy_mode": "byte-identical",
+      "sha256": "4f7d82b2b722d17c62ce2c2bdf6186a581cb755e83cfbeee7305243cc652d425"
+    },
+    {
+      "file": "academic_methods.csv",
+      "source_url": "https://github.com/super-inbox/visual-search-adhoc/blob/2d5559593ccdb922603dddf458018e5935f5239e/docs/daily_report/10.05/visual-production-research/academic_methods.csv",
+      "copy_mode": "byte-identical",
+      "sha256": "85dc80838ac363afa68ce8c28d5d402b954180fdcade4dddc2bab71b67f82836"
+    },
+    {
+      "file": "candidate_curify_pipelines.md",
+      "source_url": "https://github.com/super-inbox/visual-search-adhoc/blob/2d5559593ccdb922603dddf458018e5935f5239e/docs/daily_report/10.05/visual-production-research/candidate_curify_pipelines.md",
+      "copy_mode": "byte-identical",
+      "sha256": "9c442a9c15bcefefd37cd8e02d07886eb754cfce0e81f959807397e7827764f1"
+    },
+    {
+      "file": "failure_solution_matrix.csv",
+      "source_url": "https://github.com/super-inbox/visual-search-adhoc/blob/2d5559593ccdb922603dddf458018e5935f5239e/docs/daily_report/10.05/visual-production-research/failure_solution_matrix.csv",
+      "copy_mode": "byte-identical",
+      "sha256": "acd2fd785bebc9b3f4c8f8c0ba58e24a8b1ad62b612460caeabb2ca624ada8b1"
+    },
+    {
+      "file": "practitioner_workflows.csv",
+      "source_url": "https://github.com/super-inbox/visual-search-adhoc/blob/2d5559593ccdb922603dddf458018e5935f5239e/docs/daily_report/10.05/visual-production-research/practitioner_workflows.csv",
+      "copy_mode": "byte-identical",
+      "sha256": "98c95d07ba9a75be8e1c0672ce8468c00a6e682acca85ed459e092a5e769fab2"
+    },
+    {
+      "file": "sources.md",
+      "source_url": "https://github.com/super-inbox/visual-search-adhoc/blob/2d5559593ccdb922603dddf458018e5935f5239e/docs/daily_report/10.05/visual-production-research/sources.md",
+      "copy_mode": "byte-identical",
+      "sha256": "481eb2915220ad9fc0e11327b7f1ede21d339897f410fb87dbbf3655ce518b75"
+    },
+    {
+      "file": "VISUAL_PRODUCTION_SUMMARY.md",
+      "source_url": "https://github.com/super-inbox/visual-search-adhoc/blob/2d5559593ccdb922603dddf458018e5935f5239e/docs/daily_report/10.05/BOSS_SUMMARY.md#visual-production",
+      "copy_mode": "verbatim excerpt from # Visual Production to end of file; unrelated ASL section omitted",
+      "source_file_sha256": "8d627dec94a4e97c7bd4b6b95d685c345e85e9dc64f61cab4bb1841db50f98d2",
+      "sha256": "06f8d9fe708e6a292426fcf8786b239c63af61627c6ffe9573f3222c233a44ba"
+    }
+  ]
+}
